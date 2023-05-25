@@ -17,7 +17,9 @@ export default function TodoList({
 }: TodoListProps) {
   return (
     <ul>
-      sf
+      {todos.map(({ name, id }) => (
+        <li key={id}>{name}</li>
+      ))}
     </ul>
   )
 }
