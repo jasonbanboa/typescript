@@ -46,10 +46,15 @@ function App() {
     handleCreate();
   }
   
+  const handleSearchInputChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(value);
+  }
+  
   return (
     <div className="App">
       <Input onKeyUp={handleEnterPress} onChange={handleInputChange} value={todoName} placeholder='todo name...'/>
-      <button onClick={handleCreate}>create</button>
+      <button onClick={handleCreate}>create</button> <br />
+      <Input onChange={handleSearchInputChange} value={searchValue} placeholder="search todo..."/>
       <TodoList deleteTodo={deleteTodo} searchValue={searchValue} setSelectedTodo={setSelectedTodo} todos={todos}/>
     </div>
   );
